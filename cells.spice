@@ -1,0 +1,50 @@
+.lib "/home/mwelshemy/work/pdks/volare/sky130/versions/dd7771c384ed36b91a25e9f8b314355fc26561be/sky130B/libs.tech/ngspice/sky130.lib.spice" tt
+.temp 25
+
+* Inverter Size 1
+.subckt invx1 A Y VDD GND
+XM_N Y A GND GND sky130_fd_pr__nfet_01v8 w=0.42 l=0.15
+XM_P Y A VDD VDD sky130_fd_pr__pfet_01v8 w=1.00 l=0.15
+.ends
+
+* Inverter Size 2
+.subckt invx2 A Y VDD GND
+XM_N Y A GND GND sky130_fd_pr__nfet_01v8 w=0.84 l=0.15
+XM_P Y A VDD VDD sky130_fd_pr__pfet_01v8 w=2.00 l=0.15
+.ends
+
+* Inverter Size 4
+.subckt invx4 A Y VDD GND
+XM_N Y A GND GND sky130_fd_pr__nfet_01v8 w=1.68 l=0.15
+XM_P Y A VDD VDD sky130_fd_pr__pfet_01v8 w=4.00 l=0.15
+.ends
+
+* Inverter Size 8
+.subckt invx8 A Y VDD GND
+XM_N Y A GND GND sky130_fd_pr__nfet_01v8 w=3.36 l=0.15
+XM_P Y A VDD VDD sky130_fd_pr__pfet_01v8 w=8.00 l=0.15
+.ends
+
+* NAND2 Size 1
+.subckt nand2x1 A B Y VDD GND
+XM_N1 Y A mid GND sky130_fd_pr__nfet_01v8 w=0.84 l=0.15
+XM_N2 mid B GND GND sky130_fd_pr__nfet_01v8 w=0.84 l=0.15
+XM_P1 Y A VDD VDD sky130_fd_pr__pfet_01v8 w=1.00 l=0.15
+XM_P2 Y B VDD VDD sky130_fd_pr__pfet_01v8 w=1.00 l=0.15
+.ends
+
+* NAND2 Size 2
+.subckt nand2x2 A B Y VDD GND
+XM_N1 Y A mid GND sky130_fd_pr__nfet_01v8 w=1.68 l=0.15
+XM_N2 mid B GND GND sky130_fd_pr__nfet_01v8 w=1.68 l=0.15
+XM_P1 Y A VDD VDD sky130_fd_pr__pfet_01v8 w=2.00 l=0.15
+XM_P2 Y B VDD VDD sky130_fd_pr__pfet_01v8 w=2.00 l=0.15
+.ends
+
+* NAND2 Size 4
+.subckt nand2x4 A B Y VDD GND
+XM_N1 Y A mid GND sky130_fd_pr__nfet_01v8 w=3.36 l=0.15
+XM_N2 mid B GND GND sky130_fd_pr__nfet_01v8 w=3.36 l=0.15
+XM_P1 Y A VDD VDD sky130_fd_pr__pfet_01v8 w=4.00 l=0.15
+XM_P2 Y B VDD VDD sky130_fd_pr__pfet_01v8 w=4.00 l=0.15
+.ends

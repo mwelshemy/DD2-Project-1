@@ -1,0 +1,20 @@
+* Automated Characterization Testbench
+.include cells.spice
+
+VDD VDD 0 1.8
+VIN IN 0 PULSE(1.8 0 1n 0.0531n 0.0531n 2n 6n)
+X_DUT IN OUT VDD 0 invx2
+CLOAD OUT 0 0.0013p
+
+.tran 1p 5n
+
+.control
+run
+meas tran cell_rise trig v(IN) val=0.9 fall=1 targ v(OUT) val=0.9 rise=1
+meas tran cell_fall trig v(IN) val=0.9 rise=1 targ v(OUT) val=0.9 fall=1
+meas tran rise_transition trig v(OUT) val=0.36 rise=1 targ v(OUT) val=1.44 rise=1
+meas tran fall_transition trig v(OUT) val=1.44 fall=1 targ v(OUT) val=0.36 fall=1
+print cell_rise cell_fall rise_transition fall_transition
+quit
+.endc
+.end
